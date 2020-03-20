@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:SfChatDemo"
+             xmlns:sfChat="clr-namespace:Syncfusion.XForms.Chat;assembly=Syncfusion.SfChat.XForms"
+             mc:Ignorable="d"
+             x:Class="SfChatDemo.FlightBooking">
+
+    <ContentPage.Behaviors>
+        <local:FlightBookingBehavior/>
+    </ContentPage.Behaviors>
+
+    <ContentPage.BindingContext>
+        <local:FlightBookingViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid Padding="0" BackgroundColor="#F1F1F1">
+            <sfChat:SfChat x:Name="sfChat"
+                           MessageShape="RoundedRectangle"                           
+                           TypingIndicator="{Binding TypingIndicator}"
+                           ShowTypingIndicator="{Binding ShowTypingIndicator}"
+                           Messages="{Binding Messages}"
+                           CurrentUser="{Binding CurrentUser}" >
+            </sfChat:SfChat>
+
+            <Image Source="NoInternet.png" 
+                   Aspect="AspectFit" 
+                   BackgroundColor="White"
+                   IsVisible="{Binding IsConnectionNotEstablished}"/>
+
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0"
+                            IsVisible="{Binding ShowBusyIndicator}">
+                <ActivityIndicator x:Name="busyindicator" 
+                                           AbsoluteLayout.LayoutBounds="0.5,0.4,0.5,0.5"
+                                           AbsoluteLayout.LayoutFlags="All"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           BackgroundColor="Transparent"
+                                   IsRunning="True"
+                                   IsVisible="{Binding ShowBusyIndicator}" />
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
