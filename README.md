@@ -10,9 +10,9 @@ This sample explains how to connect to and configure your Azure bot service in a
 
         private Conversation conversation;
 
-        private string BotBaseAddress = "https://directline.botframework.com/v3/directline/conversations/";
+        private string BotBaseAddress = "xxxxxxxxxxxxxxxxxxxxxx";
 
-        private string directLineKey = "XYeLq1aytPw.4wbtMs2r7XEzdkG2_wyxGpP676wpfFS_hSaSJW8IjQg";
+        private string directLineKey = "xxxxxxxxxxxxxxxx";
 
         private string watermark = string.Empty;
 
