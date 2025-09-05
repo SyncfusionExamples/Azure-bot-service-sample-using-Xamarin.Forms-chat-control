@@ -36,7 +36,7 @@ namespace SfChatDemo
         /// <summary>
         /// Direct line key to establish connection to syncfusion bot.
         /// </summary>
-        private string directLineKey = "XYeLq1aytPw.4wbtMs2r7XEzdkG2_wyxGpP676wpfFS_hSaSJW8IjQg";
+        private string directLineKey = "use your own key";
 
         /// <summary>
         /// water mark used to get newly added message or actvity.
